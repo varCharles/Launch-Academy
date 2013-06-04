@@ -1,0 +1,64 @@
+<!doctype html>
+<head>
+<title>To Do</title>
+<link rel="stylesheet" type="text/css" href="../components/bootstrap/css/bootstrap.min.css">
+<style type="text/css">
+#todoapp{ border:1px solid #ccc; width:260px;margin:20px auto;}
+#todoapp header{ padding:20px;}
+#new-todo{ width:90%; padding:10px;}
+#todo-list{ list-style:none;}
+#todo-list li{ width:100%;}
+#todo-list li label{ display:inline-block; width:180px;padding:10px;}
+
+#todo-list li .edit{ display:none;}
+#todo-list li .view{ display:block;}
+#todo-list li.editing .edit{ display:block;}
+#todo-list li.editing .view{ display:none;}
+#todo-list li.hidden { display:none;}
+</style>
+
+</head>
+<body>
+	<div class='container'>
+	<section id="todoapp">
+			<header id="header">
+				<h1>todos</h1>
+				<input id="new-todo" placeholder="What needs to be done?" autofocus>
+			</header>
+			<section id="main">
+				<ul id="todo-list"></ul>
+			</section>
+			<footer id="footer" class="navbar">
+				
+				<ul class="nav">
+					<li><a href="#/">all</a></li>
+					<li><a href="#/active">active</a></li>
+					<li><a href="#/completed">completed</a></li>
+				</ul>
+
+			</footer>
+		</section>
+
+  </div>
+
+<!-- Templates -->
+
+	  <script type="text/template" id="item-template">
+			<div class="view row">
+				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+				<label><%- title %></label>
+				<span class="destroy icon icon-remove"></span>
+			</div>
+		<input class="edit" value="<%- title %>">
+		</script>
+
+  <script src="../components/jquery/jquery.js"></script>
+  <script src="../components/underscore/underscore.js"></script>
+  <script src="../components/backbone/backbone.js"></script>
+  <script src="../components/backbone.localStorage/backbone.localStorage.js"></script>
+  <script src="scripts/main-step11.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "ember.js",
+  "version": "1.0.0-rc.4",
+  "main": [
+    "./ember.js"
+  ],
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "handlebars": "~1.0.0-rc.4"
+  },
+  "gitHead": "bde4aa38b4d8bc59bce1a3254b543cd10928e2f5",
+  "readme": "Ember.js\n========\n\nShim repository for [Ember Application Framework](http://emberjs.com/).\n\nThis package provides the core of the ember.js framework.\n\nPackage Managers\n----------------\n\n* [Bower](http://bower.io): `ember`\n* [Composer](http://packagist.org/packages/components/ember): `components/ember`\n",
+  "readmeFilename": "README.md",
+  "_id": "ember.js@1.0.0-rc.4",
+  "description": "Ember.js ========",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/components/ember"
+  }
+}

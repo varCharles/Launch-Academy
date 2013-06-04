@@ -1,0 +1,50 @@
+<!doctype html>
+<head>
+<title>Twitter Feed</title>
+<link rel="stylesheet" href="../components/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+	<div class='container'>
+		<div id="twitter-app">
+
+			<h1>Twitter Feed</h1>
+			<input id="search-field" placeholder="Search Twitter" autofocus>
+			<span class="btn" id="init-search"> search </span>
+			<div class="row">	
+				<div class="span8 offset2" id="tweets-list"></div>	
+			</div>
+			<div id="user-details"></div>
+		</div>
+
+  </div>
+
+<!-- Templates -->
+
+<script type="text/template" id="tweets-template">
+	<div class="tweet">
+		<img src="<%= profile_image_url %>" />
+		<h1><%= from_user_name %><a href="#/user/<%= from_user_id %>" class="from_user"> @<%= from_user %></a></h1>
+		<p><%= text  %></p>
+	</div>
+</script>
+
+<script type="text/template" id="user-template">
+	<div id="panel">
+		<div id="user">
+		<img src="<%= profile_image_url %>" />
+		<p><%= from_user_name %></p>
+		<span class="close">X</span>
+	</div>
+	</div>
+</script>
+
+  <script src="../components/jquery/jquery.js"></script>
+  <script src="../components/underscore/underscore.js"></script>
+  <script src="../components/backbone/backbone.js"></script>
+  <script src="scripts/bb-cs/twit.js"></script>
+
+
+
+</body>
+</html>

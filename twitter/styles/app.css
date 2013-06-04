@@ -1,0 +1,51 @@
+.tweet{
+		border:1px solid #ccc;
+		padding:20px;
+		margin:20px 0;
+		position:relative;
+	}
+
+	.tweet img{
+		position: absolute;
+		top:20px;
+		left:20px;
+
+	}
+
+	.tweet h1, .tweet p{
+		margin-left: 70px;
+	}
+	.tweet h1{
+		font-size: 18px;
+		font-weight: normal;
+	}
+	
+	.tweet h1 span{
+		font-size:12px;
+		margin-left:5px;
+	}
+	#panel{
+		width: 100%;
+		height: 100%;
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background: rgba(0,0,0,.75);
+	}
+	#user{
+		width:400px;
+		padding:20px;
+		margin:100px auto;
+		background:#fff;
+		position:relative;
+
+	}
+
+	#user .close{
+		position:absolute;
+		right:20px;
+		top:20px;
+
+	}

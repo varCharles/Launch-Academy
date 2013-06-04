@@ -1,0 +1,61 @@
+<!doctype html>
+<head>
+<title>Films</title>
+<link rel="stylesheet"  href="../components/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"  href="styles/app.css">
+</head>
+<body>
+	<div class='container'>
+		<div id="filmapp">
+
+			<h1>Films</h1>
+			<input id="film-search" placeholder="what film are you looking for?" autofocus>
+			
+			<div class="row">
+				<div class="span3">
+					<ul id="film-list" class="nav"></ul>
+				</div>
+				<div class="span8" id="film-details"></div>	
+
+			</div>
+		</div>
+
+  </div>
+
+<!-- Templates -->
+
+<script type="text/template" id="film-template">
+	<a href="#/movie<%= mid %>"><%= name  %>
+</script>
+
+<script type="text/template" id="film-detail-template">
+	<img src="https://usercontent.googleapis.com/freebase/v1/image/<%= imageURL  %>" />
+	<h2><%= title %></h2>
+	<p><%= description %></p>
+	<h3>Staring</h3>
+	<ul>
+	<% _.each(actors, function(actor) { var actorid = actor.property['/film/performance/actor'].values[0].id; var actor_data = actor.text.split(' - ') %>
+			<li><a href="#/actor<%= actorid %>"><%= actor_data[0] %></a> as <%= actor_data[1] %></li>
+	<% }) %>
+	</ul>
+</script>
+
+<script type="text/template" id="actor-detail-template">
+	<img src="https://usercontent.googleapis.com/freebase/v1/image/<%= imageURL  %>" />
+	
+	<ul>
+	<% _.each(films, function(film) {   var filmid = film.property['/film/performance/film'].values[0].id; var film_data = film.text.split(' - ') %>
+			<li><%= film_data[0] %> in <a href="#/movie<%= filmid %>"><%= film_data[1] %></a></li>
+	<% }) %>
+	</ul>
+</script>
+
+  <script src="../components/jquery/jquery.js"></script>
+  <script src="../components/underscore/underscore.js"></script>
+  <script src="../components/backbone/backbone.js"></script>
+  <script src="scripts/fb-main.js"></script>
+
+
+
+</body>
+</html>
